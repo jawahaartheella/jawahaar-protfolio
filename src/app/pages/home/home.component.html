@@ -1,0 +1,56 @@
+<navbar></navbar>
+<section class="background-grid px-[32px] py-[120px] border-b border-white/20">
+    <div class="mx-auto max-w-4xl">
+        <div class="mb-6">
+            <h1 class="text-6xl text-white mb-4 font-bold leading-none">Frontend Engineer</h1>
+            <p class="text-xl text-white/60 mb-4 leading-none">Creating scalable, and user-focused web applications with Angular and TypeScript.</p>
+            <p class="text-sm text-white/60 leading-[20px]">2.5+ years of professional experience</p>
+        </div>
+        <div class="flex flex-row gap-3 mt-4">
+            <button class="px-6 py-3 text-white bg-blue-500 font-sm font-medium rounded-lg cursor-pointer flex flex-row items-center gap-2">
+                <span>View Projects</span>
+                <svg lucideArrowRight [size]="16"></svg>
+            </button>
+            <button class="font-sm font-medium text-white/60 border border-white/20 rounded-lg px-6 py-3 hover:bg-[#1A1A1F] cursor-pointer">Get in Touch</button>
+        </div>
+        <div class="mt-20">
+            <p class="uppercase text-sm font-semibold mb-4 text-white/60 mb-4">Technologies</p>
+            <div class="flex flex-row gap-2">
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">Angular</span>
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">JavaScript</span>
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">TypeScript</span>
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">RxJS</span>
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">HTML/CSS</span>
+                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">Tailwind CSS</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-[96px]">
+    <div class="max-w-4xl mx-auto px-8">
+        <div class="mb-12">
+            <p class="uppercase text-white/80 mb-4 font-sm font-semibold">Selected Work</p>
+            <h2 class="text-3xl font-bold text-white">Recent Projects</h2>
+        </div>
+        <div class="flex flex-col gap-8 mb-12">
+            @for (project of featuresProjects(); track project.id) {
+                <div class="group/card border border-white/20 hover:border-blue-500 rounded-lg bg-[#1A1A1F] p-6 cursor-pointer w-full transition-all duration-300">
+                    <img class="mb-3 aspect-video rounded-lg" src="{{project.imageUrl}}" alt="{{project.slug}}">
+                    <h3 class="text-base font-semibold text-white mb-2 group-hover/card:text-blue-500 transition-colors duration-300">{{project.title}}</h3>
+                    <p class="text-sm text-white/60 mb-4">{{project.shortDescription}}</p>
+                    <div class="flex jusity-center items-center gap-1 text-xs text-white/60">
+                        @for(technology of project.technologies; track technology) {
+                            <span>{{technology}}</span>
+                        } 
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="pt-2">
+            <a class="text-blue-500 flex gap-2 text-sm font-medium">
+                <span>View all projects</span>
+                <svg lucideArrowRight [size]="16"></svg>
+            </a>
+        </div>
+    </div>
+</section>
