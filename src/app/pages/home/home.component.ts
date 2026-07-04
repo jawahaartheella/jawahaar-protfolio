@@ -1,17 +1,19 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+
 import { LucideArrowRight } from '@lucide/angular';
+
 import { Project } from '../../interfaces/project.interface';
 import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'home',
-  imports: [NavbarComponent, LucideArrowRight],
+  imports: [LucideArrowRight],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   projects = signal<Project[]>([]);
+  techStack = ["Angular", "JavaScript", "TypeScript", "RxJS", "HTML/CSS", "Tailwind CSS"];
 
   featuresProjects = computed(() => this.projects().filter(p => p.isFeatured));
 
