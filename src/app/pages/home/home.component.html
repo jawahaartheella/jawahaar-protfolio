@@ -1,27 +1,36 @@
-<navbar></navbar>
-<section class="background-grid px-[32px] py-[120px] border-b border-white/20">
+<section class="background-grid px-8 py-30 border-b border-white/20">
     <div class="mx-auto max-w-4xl">
         <div class="mb-6">
-            <h1 class="text-6xl text-white mb-4 font-bold leading-none">Frontend Engineer</h1>
-            <p class="text-xl text-white/60 mb-4 leading-none">Creating scalable, and user-focused web applications with Angular and TypeScript.</p>
-            <p class="text-sm text-white/60 leading-[20px]">2.5+ years of professional experience</p>
+            <h1 class="text-4xl md:text-6xl text-white mb-4 font-bold leading-none">Frontend Engineer</h1>
+            <p class="text-lg md:text-xl text-muted mb-4 md:leading-none">Creating scalable, and user-focused web applications with Angular and TypeScript.</p>
+            <p class="text-sm text-muted leading-[20px]">2.5+ years of professional experience</p>
         </div>
-        <div class="flex flex-row gap-3 mt-4">
-            <button class="px-6 py-3 text-white bg-blue-500 font-sm font-medium rounded-lg cursor-pointer flex flex-row items-center gap-2">
+        <div class="flex flex-col md:flex-row gap-3 mt-4">
+            <button class="px-6 py-3
+                        flex flex-row 
+                        justify-center items-center gap-2
+                        text-white bg-blue-500
+                        md:hover:bg-blue-500/90
+                        rounded-lg 
+                        text-sm
+                        cursor-pointer">
                 <span>View Projects</span>
                 <svg lucideArrowRight [size]="16"></svg>
             </button>
-            <button class="font-sm font-medium text-white/60 border border-white/20 rounded-lg px-6 py-3 hover:bg-[#1A1A1F] cursor-pointer">Get in Touch</button>
+            <button class="text-muted text-sm
+                        border border-white/20 rounded-lg 
+                        px-6 py-3 
+                        md:hover:bg-surface
+                        cursor-pointer">
+                Get in Touch
+            </button>
         </div>
         <div class="mt-20">
-            <p class="uppercase text-sm font-semibold mb-4 text-white/60 mb-4">Technologies</p>
-            <div class="flex flex-row gap-2">
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">Angular</span>
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">JavaScript</span>
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">TypeScript</span>
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">RxJS</span>
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">HTML/CSS</span>
-                <span class="px-3 py-1 font-medium text-xs bg-[#1A1A1F]/80 border-1 rounded-xl border-white/20 text-blue-500">Tailwind CSS</span>
+            <p class="uppercase text-sm font-semibold mb-4 text-muted mb-4">Technologies</p>
+            <div class="flex flex-row gap-2 flex-wrap">
+                @for(technology of techStack; track technology) {
+                    <span class="techstack-item">{{technology}}</span>
+                }
             </div>
         </div>
     </div>
@@ -34,11 +43,11 @@
         </div>
         <div class="flex flex-col gap-8 mb-12">
             @for (project of featuresProjects(); track project.id) {
-                <div class="group/card border border-white/20 hover:border-blue-500 rounded-lg bg-[#1A1A1F] p-6 cursor-pointer w-full transition-all duration-300">
+                <div class="group/card border border-white/20 hover:border-blue-500 rounded-lg bg-surface p-6 cursor-pointer w-full transition-all duration-300">
                     <img class="mb-3 aspect-video rounded-lg" src="{{project.imageUrl}}" alt="{{project.slug}}">
                     <h3 class="text-base font-semibold text-white mb-2 group-hover/card:text-blue-500 transition-colors duration-300">{{project.title}}</h3>
-                    <p class="text-sm text-white/60 mb-4">{{project.shortDescription}}</p>
-                    <div class="flex jusity-center items-center gap-1 text-xs text-white/60">
+                    <p class="text-sm text-muted mb-4">{{project.shortDescription}}</p>
+                    <div class="flex jusity-center items-center gap-1 text-xs text-muted">
                         @for(technology of project.technologies; track technology) {
                             <span>{{technology}}</span>
                         } 
