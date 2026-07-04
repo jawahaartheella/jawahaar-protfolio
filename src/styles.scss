@@ -16,11 +16,11 @@
 
 @layer {
     .nav-link {
-        @apply text-sm hover:text-blue-500 text-muted;
+        @apply text-sm hover:text-blue-500;
     }
 
     .mobile-nav-link {
-        @apply text-sm text-muted w-full;
+        @apply text-sm px-4 py-2 inline-block w-full;
     }
 
     .techstack-item {
