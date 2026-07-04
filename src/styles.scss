@@ -1,6 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'tailwindcss';
 
+:root {
+    --background: #0B0B0F;
+    --muted: #9CA3AF;
+    --surface: #1A1A1F;
+}
+
+@theme {
+    --color-muted: var(--muted);
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-primary: var(--color-blue-500);
+}
+
+@layer {
+    .nav-link {
+        @apply text-sm hover:text-blue-500 text-muted;
+    }
+
+    .mobile-nav-link {
+        @apply text-sm text-muted w-full;
+    }
+}
+
 * {
     font-family: Geist, "Geist Fallback", "Geist Fallback";
 }
@@ -8,5 +31,5 @@
 body {
     margin: 0;
     padding: 0;
-    background-color:  #0B0B0F;
+    background-color: var(--background);
 }
