@@ -54,4 +54,16 @@ body {
     .tech-badge {
         @apply px-2 py-1 bg-background text-xs text-muted border border-white/10 rounded-full;
     }
+
+    .form-label {
+        @apply mb-2 block text-sm font-medium
+    }
+
+    .form-input {
+        @apply border border-white/20 rounded-lg px-4 py-2 w-full bg-card/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary placeholder-muted
+    }
+
+    .contact-alternate-container {
+        @apply border border-white/10 bg-card/50 mb-4 flex flex-row gap-4 p-4 rounded-lg items-start
+    }
 }
