@@ -1,6 +1,6 @@
 <nav class="w-full 
             sticky top-0 
-            bg-background/70 backdrop-blur-md
+            bg-background/50 backdrop-blur-md
             border-b border-white/20 
             md:px-8">
     <div class="px-8 block md:hidden">
@@ -21,7 +21,7 @@
                 </svg>
             </button>
         </div>
-        <ul class="flex flex-col border-t border-white/20 transition-all ease-in-out duration-300"
+        <ul (click)="toggleMenu()" class="flex flex-col border-t border-white/20 transition-all ease-in-out duration-300"
             [class]="isMenuOpen() ? 'opacity-100 max-h-90 pb-4 pointer-events-auto' : 'opacity-0 max-h-0 pb-0 pointer-events-none'">
             <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/home" class="mobile-nav-link text-muted">Home</a></li>
             <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/about" class="mobile-nav-link text-muted">About</a></li>
