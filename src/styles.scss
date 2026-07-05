@@ -1,17 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'tailwindcss';
 
+* {
+    font-family: Geist, "Geist Fallback", "Geist Fallback";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: var(--background);
+}
+
 :root {
     --background: #0B0B0F;
     --muted: #9CA3AF;
-    --surface: #1A1A1F;
+    --card: #1A1A1F;
 }
 
 @theme {
     --color-muted: var(--muted);
     --color-background: var(--background);
-    --color-surface: var(--surface);
+    --color-card: var(--card);
     --color-primary: var(--color-blue-500);
+
 }
 
 @layer {
@@ -24,16 +36,34 @@
     }
 
     .techstack-item {
-        @apply px-3 py-1 font-medium text-xs bg-surface/80 border-1 rounded-xl border-white/20 text-primary
+        @apply px-3 py-1 font-medium text-xs bg-card/80 border-1 rounded-xl border-white/20 text-primary;
     }
-}
 
-* {
-    font-family: Geist, "Geist Fallback", "Geist Fallback";
-}
+    .about-values {
+        @apply border rounded-lg border-white/20 p-6 bg-background;
+    }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--background);
+    .about-values > p {
+        @apply text-sm text-muted mt-2;
+    }
+
+    .about-values > h3 {
+        @apply font-semibold;
+    }
+
+    .tech-badge {
+        @apply px-2 py-1 bg-background text-xs text-muted border border-white/10 rounded-full;
+    }
+
+    .form-label {
+        @apply mb-2 block text-sm font-medium
+    }
+
+    .form-input {
+        @apply border border-white/20 rounded-lg px-4 py-2 w-full bg-card/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary placeholder-muted
+    }
+
+    .contact-alternate-container {
+        @apply border border-white/10 bg-card/50 mb-4 flex flex-row gap-4 p-4 rounded-lg items-start
+    }
 }

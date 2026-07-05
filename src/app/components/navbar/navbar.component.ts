@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { LucideMenu, LucideX } from '@lucide/angular';
@@ -10,6 +9,7 @@ import { LucideMenu, LucideX } from '@lucide/angular';
 })
 export class NavbarComponent implements OnInit {
   isMenuOpen = signal(false);
+  
   ngOnInit(): void {
     
   }
