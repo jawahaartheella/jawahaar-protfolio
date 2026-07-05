@@ -1,0 +1,46 @@
+<nav class="w-full 
+            sticky top-0 
+            bg-background/50 backdrop-blur-md
+            border-b border-white/20 
+            md:px-8">
+    <div class="px-8 block md:hidden">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="text-blue-500 font-bold text-xl">Jawahaar</a>
+            <button class="relative w-6 h-6" (click)="toggleMenu()">
+                <svg lucideMenu 
+                    size="24" 
+                    class="text-muted absolute inset-0 transition-all duration-300"
+                    [class.opacity-0]="isMenuOpen()"
+                    [class.rotate-90]="isMenuOpen()">
+                </svg>
+                <svg lucideX 
+                    size="24" 
+                    class="text-muted absolute inset-0 transition-all duration-300"
+                    [class.opacity-0]="!isMenuOpen()"
+                    [class.rotate-90]="!isMenuOpen()">
+                </svg>
+            </button>
+        </div>
+        <ul (click)="toggleMenu()" class="flex flex-col border-t border-white/20 transition-all ease-in-out duration-300"
+            [class]="isMenuOpen() ? 'opacity-100 max-h-90 pb-4 pointer-events-auto' : 'opacity-0 max-h-0 pb-0 pointer-events-none'">
+            <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/home" class="mobile-nav-link text-muted">Home</a></li>
+            <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/about" class="mobile-nav-link text-muted">About</a></li>
+            <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/projects" class="mobile-nav-link text-muted">Projects</a></li>
+            <li><a routerLinkActive="bg-primary/10 text-primary" routerLink="/contact" class="mobile-nav-link text-muted">Contact</a></li>
+        </ul>
+    </div>
+    <div class="hidden 
+                md:flex justify-between items-center 
+                mx-auto max-w-6xl 
+                h-16">
+        <div>
+            <a href="/" class="text-blue-500 font-bold text-xl">Jaw</a>
+        </div>
+        <ul class="flex gap-8">
+            <li><a routerLinkActive="text-primary" routerLink="/home" class="nav-link text-muted">Home</a></li>
+            <li><a routerLinkActive="text-primary" routerLink="/about" class="nav-link text-muted">About</a></li>
+            <li><a routerLinkActive="text-primary" routerLink="/projects" class="nav-link text-muted">Projects</a></li>
+            <li><a routerLinkActive="text-primary" routerLink="/contact" class="nav-link text-muted">Contact</a></li>
+        </ul>
+    </div>
+</nav>
