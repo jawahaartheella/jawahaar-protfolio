@@ -1,6 +1,6 @@
 <section class="all-projects-intro py-12 md:py16 px-4 sm:px-6 md:px-8 border-b border-white/20">
     <div class="mx-auto max-w-6xl">
-        <h1 class="text-4xl font-bold mb-4 tracking-tight">Projects</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Projects</h1>
         <p class="text-muted text-lg">A selection of projects I've worked on, showcasing my skills and experience.</p>
     </div>
 </section>
@@ -9,41 +9,44 @@
     <div class="max-w-6xl mx-auto">
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             @for(project of projects(); track project.id) {
-                <div class="p-6 bg-card/50 rounded-lg border border-white/20">
+                <div class="group p-6 bg-gradient-to-br from-card/50 to-transparent rounded-lg border border-white/20 hover:border-primary/50 hover:bg-card/50 transition-all duration-300">
                     <img class="aspect-video mb-4 rounded-lg border border-white/10" src="{{project.imageUrl}}" alt="{{project.title}}">
-                    <h3 class="text-lg font-semibold">{{project.title}}</h3>
-                    <p class="text-sm text-muted mt-2 line-clamp-3">{{project.fullDescription}}</p>
-                    <div class="flex felx-row flex-wrap gap-1 mt-4">
-                        @for(tech of project.technologies.slice(0,3); track tech) {
-                            <span class="tech-badge">{{tech}}</span>
-                        }
-                        @if(project.technologies.length > 3) {
-                            <span class="tech-badge">+{{project.technologies.length - 3}}</span>
-                        }
+                    <div class="flex flex-col flex-1">
+                        <h3 class="text-lg font-semibold group-hover:text-primary transition-colors duration-300">{{project.title}}</h3>
+                        <p class="text-sm text-muted mt-2 line-clamp-3">{{project.fullDescription}}</p>
+                        <div class="flex felx-row flex-wrap gap-1 mt-4">
+                            @for(tech of project.technologies.slice(0,3); track tech) {
+                                <span class="tech-badge">{{tech}}</span>
+                            }
+                            @if(project.technologies.length > 3) {
+                                <span class="tech-badge">+{{project.technologies.length - 3}}</span>
+                            }
+                        </div>
+                        <div class="border-t border-white/5 
+                                    pt-4 mt-4
+                                    flex flex-row gap-3
+                                    items-center justify-start">
+                            <a class="flex gap-2
+                                justify-center items-center
+                                text-xs text-muted" 
+                            href="{{project.githubUrl}}"
+                            rel="noreferrer noopener"
+                            target="_blank">
+                                <svg lucideCodeXml size="16"></svg>
+                                <span class="">Code</span>
+                            </a>
+                            <a class="flex gap-2
+                                justify-center items-center
+                                text-xs text-muted" 
+                            href="{{project.liveUrl}}"
+                            rel="noreferrer noopener"
+                            target="_blank">
+                                <svg lucideExternalLink size="16"></svg>
+                                <span>Demo</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="border-t border-white/5 
-                                pt-4 mt-4
-                                flex flex-row gap-3
-                                items-center justify-start">
-                        <a class="flex gap-2
-                            justify-center items-center
-                            text-xs text-muted" 
-                        href="{{project.githubUrl}}"
-                        rel="noreferrer noopener"
-                        target="_blank">
-                            <svg lucideCodeXml size="16"></svg>
-                            <span class="">Code</span>
-                        </a>
-                        <a class="flex gap-2
-                            justify-center items-center
-                            text-xs text-muted" 
-                        href="{{project.liveUrl}}"
-                        rel="noreferrer noopener"
-                        target="_blank">
-                            <svg lucideExternalLink size="16"></svg>
-                            <span>Demo</span>
-                        </a>
-                    </div>
+                    
                 </div>
             }
         </div>
@@ -54,6 +57,6 @@
     <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Have a project in mind?</h2>
         <p class="text-muted mb-8">I'm always interested in hearing about new opportunities and exciting challenges.</p>
-        <button class="bg-primary text-white rounded-lg px-6 py-3 font-medium" (click)="goToContact()">Get in Touch</button>
+        <button class="inline-flex text-sm bg-primary text-white rounded-lg px-6 py-3 font-medium" (click)="goToContact()">Get in Touch</button>
     </div>
 </section>
