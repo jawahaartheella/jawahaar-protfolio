@@ -42,7 +42,7 @@
             <h2 class="text-3xl font-bold">Recent Projects</h2>
         </div>
         <div class="flex flex-col gap-8 mb-12">
-            @for (project of featuresProjects(); track project.id) {
+            @for (project of featuresProjects().slice(0,3); track project.id) {
                 <div class="group/card border border-white/20 hover:border-blue-500 rounded-lg bg-card p-6 cursor-pointer w-full transition-all duration-300">
                     <img class="mb-3 aspect-video rounded-lg" src="{{project.imageUrl}}" alt="{{project.slug}}">
                     <h3 class="text-base font-semibold mb-2 group-hover/card:text-blue-500 transition-colors duration-300">{{project.title}}</h3>
@@ -60,6 +60,30 @@
                 <span>View all projects</span>
                 <svg lucideArrowRight [size]="16"></svg>
             </a>
+        </div>
+    </div>
+</section>
+
+<section class="values px-4 sm:px-6 md:px-8 bg-card/50 py-16">
+    <div class="container">   
+        <h2 class="font-bold text-2xl mb-8">What I value</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="about-values">
+                <h3>Clean Code</h3>
+                <p>Writing maintainable, readable code that others can easily understand and build upon.</p>
+            </div>
+            <div class="about-values">
+                <h3>User Experience</h3>
+                <p>Creating intuitive interfaces that delight users and solve real problems.</p>
+            </div>
+            <div class="about-values">
+                <h3>Performance</h3>
+                <p>Optimizing applications for speed and efficiency to provide better user experiences.</p>
+            </div>
+            <div class="about-values">
+                <h3>Continous Learning</h3>
+                <p>Staying updated with modern technologies and best practices in web development.</p>
+            </div>
         </div>
     </div>
 </section>

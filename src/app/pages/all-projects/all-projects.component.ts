@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { LucideCodeXml, LucideExternalLink } from '@lucide/angular';
 
@@ -13,15 +13,14 @@ import { ProjectsService } from '../../services/projects.service';
 })
 export class AllProjectsComponent {
   projects= signal<Project[]>([]);
-  
-  constructor(private projectService: ProjectsService,
-    private router: Router
-  ) {}
+
+  projectService = inject(ProjectsService);
+  router = inject(Router);
+  route = inject(ActivatedRoute);
 
   ngOnInit() {
-    this.projectService.getProjectsList().subscribe(data => {
-      this.projects.set(data);
-    });
+    this.projects.set(this.route.snapshot.data['projects']);
+    console.log(this.projects());
   }
 
   goToContact() {
