@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { LucideArrowRight, LucideCalendar, LucideDownload, LucideMapPin } from '@lucide/angular';
 
 @Component({
   selector: 'app-resume',
-  imports: [],
-  templateUrl: './resume.component.html',
-  styles: ``
+  imports: [LucideArrowRight, LucideDownload, LucideCalendar, LucideMapPin],
+  templateUrl: './resume.component.html'
 })
 export class ResumeComponent {
+  router = inject(Router);
 
+  goToContact() {
+    this.router.navigate(['/contact']);
+  }
 }
