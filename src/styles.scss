@@ -28,6 +28,7 @@ body {
 }
 
 @layer {
+    // common classes
     .container {
         @apply max-w-4xl mx-auto
     }
@@ -42,6 +43,14 @@ body {
 
     .mobile-nav-link {
         @apply text-sm px-4 py-2 inline-block w-full;
+    }
+
+    .btn-primary {
+        @apply py-3 px-6 text-sm font-medium bg-primary hover:bg-primary/90 rounded-lg cursor-pointer active:scale-95 transition-all
+    }
+
+    .btn-secondary {
+        @apply py-3 px-6 text-sm font-medium border border-white/20 rounded-lg md:hover:bg-card cursor-pointer
     }
 
     .techstack-item {
@@ -61,7 +70,7 @@ body {
     }
 
     .tech-badge {
-        @apply px-2 py-1 bg-background text-xs text-muted border border-white/10 rounded-full;
+        @apply px-3 py-1 bg-background font-medium text-xs border border-white/10 rounded-full;
     }
 
     .form-label {
