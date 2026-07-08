@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { projectsResolver } from './resolvers/projects.resolver';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -7,11 +6,5 @@ export const routes: Routes = [
     // { path: 'about', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent) },
     { path: 'resume', loadComponent: () => import('./pages/resume/resume.component').then(m => m.ResumeComponent) },
     { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent) },
-    { 
-        path: 'projects', 
-        loadComponent: () => import('./pages/all-projects/all-projects.component').then(m => m.AllProjectsComponent), 
-        resolve: { 
-            projects: projectsResolver 
-        }
-    }
+    { path: 'projects', loadComponent: () => import('./pages/all-projects/all-projects.component').then(m => m.AllProjectsComponent) }
 ];
