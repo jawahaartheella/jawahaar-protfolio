@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LucideCodeXml, LucideDatabase, LucideDynamicIcon, LucidePanelsTopLeft } from '@lucide/angular';
 
 @Component({
-  selector: 'app-about',
+  selector: 'about',
   imports: [LucideDynamicIcon],
   templateUrl: './about.component.html'
 })
