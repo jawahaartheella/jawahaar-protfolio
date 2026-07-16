@@ -26,8 +26,8 @@
     <div class="max-w-4xl mx-auto space-y-12">
         <h2 class="text-3xl font-bold">Professional Experience</h2>
         <div class="space-y-10">
-            <div class="space-y-4 border border-white/20 rounded-lg p-6">
-                <div class="flex flex-col sm:flex-row gap-2">
+            <div class="space-y-4 border border-white/20 hover:border-primary/30 bg-card/30 hover:bg-card/50 rounded-lg p-6">
+                <div class="flex flex-col sm:flex-row gap-2 items-start justify-between">
                     <div>
                         <h3 class="text-xl font-semibold">Associate Software Engineer</h3>
                         <p class="text-primary font-medium">Tech Solutions Inc.</p>
@@ -66,18 +66,18 @@
 </section>
 
 <section class="skills-set px-4 sm:px-6 md:px-8 py-12 sm:py-16 border-b border-white/20">
-    <div class="ma-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto">
         <div class="space-y-10">
             <h2 class="text-3xl font-bold">Skills & Expertise</h2>
-            <div class="flex flex-col sm:flex-row gap-8">
-                <div class="border border-white/20 rounded-lg p-6 space-y-4">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="border border-white/20 hover:border-primary/30 bg-card/30 hover:bg-card/50 rounded-lg p-6 space-y-4">
                     <h3 class="text-lg">Frontend</h3>
                     <div class="flex flex-row flex-wrap gap-2">
                         <span class="tech-badge text-primary">Angular</span>
                         <span class="tech-badge text-primary">CSS</span>
                     </div>
                 </div>
-                <div class="border border-white/20 rounded-lg p-6 space-y-4">
+                <div class="border border-white/20 hover:border-primary/30 bg-card/30 hover:bg-card/50 rounded-lg p-6 space-y-4">
                     <h3 class="text-lg">Frontend</h3>
                     <div class="flex flex-row flex-wrap gap-2">
                         <span class="tech-badge text-primary">Angular</span>
@@ -89,53 +89,54 @@
     </div>
 </section>
 
-<section class="projects px-4 sm:px-6 md:px-8 py-12 sm:py-16">
-    <div class="max-w-4xl mx-auto">
+<section class="projects px-4 sm:px-6 md:px-8 py-12 sm:py-16 border-b border-white/20">
+    <div class="max-w-4xl mx-auto space-y-10">
         <div class="flex flex-row items-center justify-between">
             <h2 class="text-3xl font-bold">Featured Projects</h2>
-            <a routerLink="projects" class="flex flex-row">
-                <span>View all projects</span>
-                <svg lucideArrowRight></svg>
+            <a routerLink="/projects" class="flex flex-row items-center gap-2 text-primary">
+                <span class="hidden md:inline-block">View all projects</span>
+                <span class="md:hidden">View all</span>
+                <svg lucideArrowRight size="16"></svg>
             </a>
         </div>
-        <div>
-            <div>
-                <h3>E-Commerce platform</h3>
-                <p>Full-featured e-commerce platform with product catalog, shopping cart, and secure checkout.</p>
-                <div>
-                    <span>Angular</span>
-                    <span>JavaScript</span>
-                </div>
-            </div>
-    </div>
-    </div>
-</section>
-
-<section class="education">
-    <div>
-        <h2>Education</h2>
-        <div>
-            <div>
-                <div>
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <p>University of Technology</p>
-                    <p>GPA: 3.8/4.0 | Dean's List | Specialized in Web Development</p>
-                </div>
-                <div>
-                    <p>2021</p>
+        <div class="grid gap-6">
+            <div class="border border-white/20 rounded-lg p-6 space-y-3 bg-card/30 hover:border-primary/30 hover:bg-card/50">
+                <h3 class="text-lg font-semibold">E-Commerce platform</h3>
+                <p class="text-muted mt-1">Full-featured e-commerce platform with product catalog, shopping cart, and secure checkout.</p>
+                <div class="flex flex-row items-center gap-2">
+                    <span class="tech-badge text-primary">Angular</span>
+                    <span class="tech-badge text-primary">JavaScript</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="get-in-touch">
-    <div>
-        <h2>Interested in working together?</h2>
-        <p>I'm always open to new opportunities and collaborations.</p>
-        <button (click)="goToContact()">
+<section class="education px-4 sm:px-6 md:px-8 py-12 sm:py-16 border-b border-white/20">
+    <div class="max-w-4xl mx-auto space-y-10">
+        <h2 class="text-3xl font-bold">Education</h2>
+        <div class="space-y-6">
+            <div class="border border-white/20 hover:border-primary/30 bg-card/30 hover:bg-card/50 p-6 rounded-lg flex flex-row items-start justify-between">
+                <div class="space-y-2">
+                    <h3 class="text-lg font-semibold">Bachelor of Science in Computer Science</h3>
+                    <p class="text-primary font-medium">University of Technology</p>
+                    <p class="text-muted text-sm">GPA: 3.8/4.0 | Dean's List | Specialized in Web Development</p>
+                </div>
+                <div>
+                    <p class="text-muted text-sm mt-1">2021</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="get-in-touch px-4 sm:px-6 md:px-8 py-12 sm:py-16 bg-card/30">
+    <div class="max-w-4xl mx-auto space-y-6 text-center">
+        <h2 class="text-3xl font-bold">Interested in working together?</h2>
+        <p class="text-muted mt-3 text-lg">I'm always open to new opportunities and collaborations.</p>
+        <button (click)="goToContact()" class="inline-flex gap-2 btn-primary w-full sm:w-auto items-center justify-center">
             <span>Get in Touch</span>
-            <svg lucideArrowRight></svg>
+            <svg lucideArrowRight size="16"></svg>
         </button>
     </div>
 </section>

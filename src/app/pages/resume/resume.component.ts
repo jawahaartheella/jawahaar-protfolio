@@ -3,7 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 import { LucideArrowRight, LucideCalendar, LucideDownload, LucideMapPin } from '@lucide/angular';
 
 @Component({
-  selector: 'app-resume',
+  selector: 'resume',
   imports: [LucideArrowRight, LucideDownload, LucideCalendar, LucideMapPin, RouterLink],
   templateUrl: './resume.component.html'
 })
