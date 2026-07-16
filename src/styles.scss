@@ -38,7 +38,7 @@ body {
     }
     
     .nav-link {
-        @apply text-sm hover:text-foreground transition-colors duration-300;
+        @apply text-sm transition-colors duration-300;
     }
 
     .mobile-nav-link {
@@ -50,7 +50,7 @@ body {
     }
 
     .btn-secondary {
-        @apply py-3 px-6 text-sm font-medium border border-white/20 rounded-lg md:hover:bg-card cursor-pointer
+        @apply py-3 px-6 text-sm font-medium border border-white/20 rounded-lg md:hover:bg-card cursor-pointer active:scale-95 transition-all
     }
 
     .techstack-item {
@@ -91,5 +91,38 @@ body {
 
     .project-links {
         @apply flex gap-2 justify-center items-center text-xs text-muted hover:text-primary transition-colors duration-300
+    }
+}
+
+// Router Animation:
+::view-transition-old(root) {
+    animation: fade-out 250ms ease-in-out;
+}
+
+::view-transition-new(root) {
+    animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to  {
+        opacity: 0;
+        transform: translateY(0);
     }
 }
