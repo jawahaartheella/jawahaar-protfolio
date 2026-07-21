@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { LucideCodeXml, LucideExternalLink } from '@lucide/angular';
+import { LucideCodeXml, LucideExternalLink, LucideX } from '@lucide/angular';
 
 import { Project } from '../../interfaces/project.interface';
 import { ProjectsService } from '../../services/projects.service';
@@ -9,7 +9,7 @@ import { ProjectCardSkeletonComponent } from '../../skeletons/project-card-skele
 
 @Component({
   selector: 'all-projects',
-  imports: [LucideCodeXml, LucideExternalLink, ProjectCardSkeletonComponent],
+  imports: [LucideCodeXml, LucideExternalLink, LucideX, ProjectCardSkeletonComponent],
   templateUrl: './all-projects.component.html'
 })
 export class AllProjectsComponent {
