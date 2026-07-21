@@ -1,26 +1,27 @@
 <section class="background-grid px-6 py-20 md:px-8 md:py-38 border-b border-white/20">
     <div class="container">
-        <div class="mb-6">
-            <h1 class="text-4xl md:text-6xl mb-4 font-bold leading-none">Frontend Engineer</h1>
-            <p class="text-lg md:text-xl text-muted mb-4 md:leading-none">Creating scalable, and user-focused web applications with Angular and TypeScript.</p>
-            <p class="text-sm text-muted leading-[20px]">2.5+ years of professional experience</p>
+        <div class="mb-6 space-y-4">
+            <p class="text-lg md:text-xl text-muted">Hi, I'm</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-none">Jawahaar <span class="text-primary">Theella</span></h1>
+            <p class="text-lg md:text-xl text-muted">Software Engineer with 2.5 years of experience specializing in frontend development, building scalable enterprise applications with Angular and TypeScript.</p>
         </div>
         <div class="flex flex-col md:flex-row gap-3 mt-4">
-            <button class="btn-primary
+            <a class="btn-primary
                         flex flex-row 
-                        justify-center items-center gap-2">
-                <span>View Projects</span>
+                        justify-center items-center gap-2"
+                routerLink="/projects">
+                <span>View Projects</span>  
                 <svg lucideArrowRight [size]="16"></svg>
-            </button>
-            <button class="btn-secondary">
+            </a>
+            <a class="btn-secondary" routerLink="/contact">
                 Get in Touch
-            </button>
+            </a>
         </div>
         <div class="mt-20">
-            <p class="uppercase text-sm font-semibold mb-4 text-muted mb-4">Technologies</p>
+            <p class="text-sm font-semibold mb-4 text-muted mb-4">Core Skills</p>
             <div class="flex flex-row gap-2 flex-wrap">
-                @for(technology of techStack; track technology) {
-                    <span class="techstack-item">{{technology}}</span>
+                @for(skill of coreSkills; track skill) {
+                    <span class="techstack-item">{{skill}}</span>
                 }
             </div>
         </div>
@@ -47,7 +48,8 @@
             }
         </div>
         <div class="pt-2">
-            <a class="text-blue-500 flex gap-2 text-sm font-medium">
+            <a class="text-blue-500 flex gap-2 text-sm font-medium items-center cursor-pointer"
+               routerLink="/projects">
                 <span>View all projects</span>
                 <svg lucideArrowRight [size]="16"></svg>
             </a>

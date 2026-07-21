@@ -1,4 +1,5 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 import { LucideArrowRight } from '@lucide/angular';
 
@@ -7,13 +8,28 @@ import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'home',
-  imports: [LucideArrowRight],
+  imports: [LucideArrowRight, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   projects = signal<Project[]>([]);
-  techStack = ["Angular", "JavaScript", "TypeScript", "RxJS", "HTML/CSS", "Tailwind CSS"];
+  coreSkills = [
+      "Angular", 
+      "TypeScript", 
+      "Signals", 
+      "RxJS", 
+      "JavaScript", 
+      "HTML/CSS", 
+      "Tailwind CSS", 
+      "Responsive Design", 
+      "RESTful APIs", 
+      "Component Architecture", 
+      "State Management", 
+      "Performance", 
+      "Agile",
+      "Git/Github"
+  ];
 
   featuresProjects = computed(() => this.projects().filter(p => p.isFeatured));
 
